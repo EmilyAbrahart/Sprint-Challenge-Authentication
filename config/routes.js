@@ -67,7 +67,7 @@ function getJokes(req, res) {
 
 // JWT Generation
 function generateToken(user) {
-  const secret =process.env.JWT_SECRET;
+	const secret = process.env.JWT_SECRET;
 
 	const payload = {
 		sub: user.id,
