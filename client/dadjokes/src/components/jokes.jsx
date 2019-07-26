@@ -1,6 +1,12 @@
 import React from 'react';
 import Joke from './joke';
 import axiosWithAuth from '../authentication/axiosWithAuth'
+import styled from 'styled-components';
+
+const JokesDiv = styled.div`
+overflow-y: scroll;
+height: 800px;
+`
 
 class Jokes extends React.Component {
   constructor(props) {
@@ -27,11 +33,11 @@ class Jokes extends React.Component {
   
   render() {
     return (
-      <div>
+      <JokesDiv>
         {this.state.jokes.map(joke => 
          <Joke {...joke} key={joke.id} />
         )}
-      </div>
+      </JokesDiv>
     )
   }
 }
